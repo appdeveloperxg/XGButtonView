@@ -34,8 +34,11 @@
 
 -(void)setButtonBTextColor:(UIColor *)buttonBTextColor
   setButtonBackGroundColor:(UIColor *)buttonBackGroundColor
+                   setBtnY:(CGFloat)BtnY
            setButtonHeight:(CGFloat)buttonHeight
             setButtonSpace:(CGFloat)buttonSpace
                 setBtnFont:(CGFloat)btnFont ;
+
+-(CGFloat)returnXGButtonViewHeightWithDataArr:(NSArray*)dataArr;
 
 @end

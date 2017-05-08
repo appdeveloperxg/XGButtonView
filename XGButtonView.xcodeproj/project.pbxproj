@@ -17,7 +17,7 @@
 		CE8C3F6B1EB858C000782096 /* XGButtonViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C3F6A1EB858C000782096 /* XGButtonViewTests.m */; };
 		CE8C3F761EB858C000782096 /* XGButtonViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C3F751EB858C000782096 /* XGButtonViewUITests.m */; };
 		CE8C3F851EB8590D00782096 /* XGButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C3F841EB8590D00782096 /* XGButtonView.m */; };
-		CE8C3F881EB85A5300782096 /* MyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C3F871EB85A5300782096 /* MyControl.m */; };
+		CE94321A1EB9769C007BD6D9 /* MyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9432191EB9769C007BD6D9 /* MyControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,8 @@
 		CE8C3F771EB858C000782096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8C3F831EB8590D00782096 /* XGButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGButtonView.h; sourceTree = "<group>"; };
 		CE8C3F841EB8590D00782096 /* XGButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGButtonView.m; sourceTree = "<group>"; };
-		CE8C3F861EB85A5300782096 /* MyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyControl.h; path = "../../员工端App接口/IOS/KismartUser/Libs/Tools/Common/MyControl.h"; sourceTree = "<group>"; };
-		CE8C3F871EB85A5300782096 /* MyControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyControl.m; path = "../../员工端App接口/IOS/KismartUser/Libs/Tools/Common/MyControl.m"; sourceTree = "<group>"; };
+		CE9432181EB9769C007BD6D9 /* MyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyControl.h; sourceTree = "<group>"; };
+		CE9432191EB9769C007BD6D9 /* MyControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +109,8 @@
 		CE8C3F4C1EB858BD00782096 /* XGButtonView */ = {
 			isa = PBXGroup;
 			children = (
-				CE8C3F861EB85A5300782096 /* MyControl.h */,
-				CE8C3F871EB85A5300782096 /* MyControl.m */,
+				CE9432181EB9769C007BD6D9 /* MyControl.h */,
+				CE9432191EB9769C007BD6D9 /* MyControl.m */,
 				CE8C3F501EB858BD00782096 /* AppDelegate.h */,
 				CE8C3F511EB858BE00782096 /* AppDelegate.m */,
 				CE8C3F531EB858BE00782096 /* ViewController.h */,
@@ -292,7 +292,7 @@
 				CE8C3F851EB8590D00782096 /* XGButtonView.m in Sources */,
 				CE8C3F551EB858BE00782096 /* ViewController.m in Sources */,
 				CE8C3F521EB858BE00782096 /* AppDelegate.m in Sources */,
-				CE8C3F881EB85A5300782096 /* MyControl.m in Sources */,
+				CE94321A1EB9769C007BD6D9 /* MyControl.m in Sources */,
 				CE8C3F4F1EB858BD00782096 /* main.m in Sources */,
 				CE8C3F5B1EB858BF00782096 /* XGButtonView.xcdatamodeld in Sources */,
 			);
@@ -532,6 +532,7 @@
 				CE8C3F7C1EB858C000782096 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE8C3F7D1EB858C000782096 /* Build configuration list for PBXNativeTarget "XGButtonViewTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +541,7 @@
 				CE8C3F7F1EB858C000782096 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE8C3F801EB858C000782096 /* Build configuration list for PBXNativeTarget "XGButtonViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +550,7 @@
 				CE8C3F821EB858C000782096 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

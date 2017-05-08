@@ -11,11 +11,11 @@
 #define WORDSGRAYCOLOR [UIColor redColor]
 #define WORDBLACKCOLOR [UIColor blueColor]
 #define BtnH 49.5
-#define BtnY 42
+
 
 
 @interface XGButtonView ()
-
+@property (nonatomic,assign) CGFloat BtnY;
 
 @end
 
@@ -29,7 +29,7 @@
     if (self = [super initWithFrame:frame]) {
         
         [self addSubview:self.titleLable];
-        
+        _BtnY = 42;
         //创建button
     
 //        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.height);
@@ -74,13 +74,13 @@
             width = 0;
             width = width+titleSize.width;
             number = 0;
-            button.frame = CGRectMake(10, BtnY +_buttonHeight*height, titleSize.width, _buttonHeight-15.5);
+            button.frame = CGRectMake(10, _BtnY +_buttonHeight*height, titleSize.width, _buttonHeight-15.5);
         }else{
-            button.frame = CGRectMake(width+10+(number*10), BtnY +_buttonHeight*height, titleSize.width, _buttonHeight-15.5);
+            button.frame = CGRectMake(width+10+(number*10), _BtnY +_buttonHeight*height, titleSize.width, _buttonHeight-15.5);
             width = width+titleSize.width;
         }
         if (i==dataArr.count-1) {
-            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width,BtnY +(height+1)*BtnH);
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width,_BtnY +(height+1)*BtnH);
         }
 
         number++;
@@ -116,8 +116,13 @@
 {
     _buttonBTextColor = buttonBTextColor;
 }
+-(void)setBtnY:(CGFloat)BtnY
+{
+    _BtnY = BtnY;
+}
 -(void)setButtonBTextColor:(UIColor *)buttonBTextColor
   setButtonBackGroundColor:(UIColor *)buttonBackGroundColor
+                   setBtnY:(CGFloat)BtnY
            setButtonHeight:(CGFloat)buttonHeight
             setButtonSpace:(CGFloat)buttonSpace
                 setBtnFont:(CGFloat)btnFont
@@ -127,6 +132,7 @@
     self.buttonBTextColor = buttonBTextColor;
     self.buttonBackGroundColor = buttonBackGroundColor;
     self.btnFont = btnFont;
+    self.BtnY = BtnY;
     self.buttonSpace = buttonSpace;
     self.buttonHeight = buttonHeight;
     
@@ -147,6 +153,42 @@
         _titleLable = [MyControl createLabelWithFrame:CGRectMake(15, 15, 200, 14) text:@"最近搜索" font:14 textColor:WORDSGRAYCOLOR textAlignment:0 backgroundColor:[UIColor clearColor]];
     }
     return _titleLable;
+}
+-(CGFloat)returnXGButtonViewHeightWithDataArr:(NSArray *)dataArr
+{
+    
+    int width = 0;
+    int height = 0;
+    int number = 0;
+    int han = 0;
+    //创建button
+    for (int i = 0; i < dataArr.count; i++) {
+        
+        
+        CGSize titleSize = [dataArr[i] boundingRectWithSize:CGSizeMake(999, 25) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:_btnFont]} context:nil].size;
+        titleSize.width += _buttonSpace;
+        static int hang = 0;
+        //自动的折行
+        han = han +titleSize.width+_buttonSpace;
+        if (han > [[UIScreen mainScreen]bounds].size.width) {
+            han = 0;
+            han = han + titleSize.width;
+            height++;
+            hang++;
+            width = 0;
+            width = width+titleSize.width;
+            number = 0;
+        }else{
+            width = width+titleSize.width;
+        }
+        if (i==dataArr.count-1) {
+            return  _BtnY +(height+1)*BtnH;
+        }
+        
+        number++;
+    }
+    return _BtnY +(height+1)*BtnH;
+    
 }
 //- (void)handleButton:(UIButton *)button{
 //    button.selected = !button.selected;
